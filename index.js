@@ -20,6 +20,8 @@ const divide = function(x, y){
     return result;
 }
 
+
+//function depending on operator used
 let operate = function(x, operator, y){
 
 switch (operator) {
@@ -36,7 +38,16 @@ switch (operator) {
 return result
 }
 
+//empty array of numbers    
+let numberArray = [];
 
+//display of calculator
+let screen = document.getElementById("screen-display");
 
+//function to grab value of numbers and show them on calc screen
+function displayStore(el){
+let amount = el.getAttribute('value');
+screen.innerHTML += amount;
+}
 
-
+// numberArray.push(Number(numberForArray1));

@@ -6,36 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<script src="index.js"></script>
+<script src="index.js" defer></script>
 <link rel="stylesheet" href="styles.css">
 <body>
 <div class="calculator-outline">
 
-<div class="screen">
-    <p>12345678</p>
+<div id="screen">
+    <p id="screen-display"></p>
 </div>
 <div class="buttons">
 <div class="first5">
     <div id="CE"><p>CE</p></div>
-    <div id="7"><p>7</p></div>
-    <div id="4"><p>4</p></div>
-    <div id="1"><p>1</p></div>
+    <div id="7" onclick="displayStore(this)" value = 7><p>7</p></div>
+    <div id="4" onclick="displayStore(this)" value = 4><p>4</p></div>
+    <div id="1" onclick="displayStore(this)" value = 1 ><p>1</p></div>
     <div id="plus-minus"><p>+/-</p></div>
 </div>
 
 
 <div class="second5">
     <div id="C"><p>C</p></div>
-    <div id="8"><p>8</p></div>
-    <div id="5"><p>5</p></div>
-    <div id="2"><p>2</p></div>
-    <div id="0"><p>0</p></div>
+    <div id="8" onclick="displayStore(this)" value = 8><p>8</p></div>
+    <div id="5" onclick="displayStore(this)" value = 5><p>5</p></div>
+    <div id="2" onclick="displayStore(this)" value = 2><p>2</p></div>
+    <div id="0" onclick="displayStore(this)" value = 0><p>0</p></div>
 </div>
 <div class="third5">
     <div id="backspace"><p>X-space</p></div>
-    <div id="9"><p>9</p></div>
-    <div id="6"><p>6</p></div>
-    <div id="3"><p>3</p></div>
+    <div id="9" onclick="displayStore(this)" value = 9><p>9</p></div>
+    <div id="6" onclick="displayStore(this)" value = 6><p>6</p></div>
+    <div id="3" onclick="displayStore(this)" value = 3><p>3</p></div>
     <div id="."><p>.</p></div>
 </div>
 <div class="fourth5">
