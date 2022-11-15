@@ -55,13 +55,17 @@ html{
     width: 100%;
     justify-content: center;
     gap: 4%;
-    margin-left: 9%;
+    align-items: center;
+    
 }
 
 .first5 > * {
     border: solid black;
     height: 15%;
     width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .second5{
@@ -71,6 +75,7 @@ html{
     width: 100%;
     justify-content: center;
     gap: 4%;
+    align-items: center;
     
 }
 
@@ -78,6 +83,9 @@ html{
     border: solid black;
     height: 15%;
     width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .third5{
@@ -87,6 +95,7 @@ html{
     width: 100%;
     justify-content: center;
     gap: 4%;
+    align-items: center;
     
 }
 
@@ -94,6 +103,9 @@ html{
     border: solid black;
     height: 15%;
     width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .fourth5{
@@ -103,9 +115,13 @@ html{
     width: 100%;
     justify-content: center;
     gap: 4%;
+    align-items: center;
 }
 
 .fourth5 > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: solid black;
     height: 15%;
     width: 60%;
