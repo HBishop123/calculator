@@ -38,16 +38,28 @@ switch (operator) {
 return result
 }
 
+
 //empty array of numbers    
-let numberArray = [];
+let arr = [];
+
 
 //display of calculator
 let screen = document.getElementById("screen-display");
 
 //function to grab value of numbers and show them on calc screen
-function displayStore(el){
+
+
+function display(el){
 let amount = el.getAttribute('value');
 screen.innerHTML += amount;
 }
+
+//maybe dont need to store value from click. maybe only store value from display, using the amount value
+function store(el){
+let amount = el.getAttribute('value');
+arr.push(amount)
+}
+console.log(arr)
+
 
 // numberArray.push(Number(numberForArray1));
