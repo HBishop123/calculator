@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+.calculator-outline{
+    display: flex;
+    flex-direction: column;
+    border: solid black;
+    height: 70%;
+    width: 27%;
+
+
+}
+.screen{
+    display: flex;
+    border: solid black;
+    width: 90%;
+    height: 20%;
+    margin-top: 10%;
+    align-self: center;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 40px;
+   
+}
+
+.buttons{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    align-items: space-around;
+}
+
+.first5{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    gap: 4%;
+    margin-left: 9%;
+}
+
+.first5 > * {
+    border: solid black;
+    height: 15%;
+    width: 60%;
+}
+
+.second5{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    gap: 4%;
+    
+}
+
+.second5 > * {
+    border: solid black;
+    height: 15%;
+    width: 60%;
+}
+
+.third5{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    gap: 4%;
+    
+}
+
+.third5 > * {
+    border: solid black;
+    height: 15%;
+    width: 60%;
+}
+
+.fourth5{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    gap: 4%;
+}
+
+.fourth5 > * {
+    border: solid black;
+    height: 15%;
+    width: 60%;
+}
