@@ -39,8 +39,11 @@ return result
 }
 
 
+//try to get one number added to with each click instead of pushing to array.
+
 //empty array of numbers    
 let number = []
+let numberInt = ''
 
 //display of calculator
 let screen = document.getElementById("screen-display");
@@ -52,7 +55,17 @@ let amount = el.getAttribute('value');
 screen.innerHTML += amount;
 number.push(amount);
 }
+
+let plus = document.getElementById('+');
+plus.addEventListener('click', function(){
+
+})
+
+console.log(numberInt)
 console.log(number)
+
+
+
 
 
 
