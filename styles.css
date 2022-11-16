@@ -27,7 +27,7 @@ html{
 
 
 }
-.screen{
+#screen{
     display: flex;
     border: solid black;
     width: 90%;

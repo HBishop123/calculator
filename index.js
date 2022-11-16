@@ -40,26 +40,21 @@ return result
 
 
 //empty array of numbers    
-let arr = [];
-
+let number = []
 
 //display of calculator
 let screen = document.getElementById("screen-display");
 
 //function to grab value of numbers and show them on calc screen
 
-
 function display(el){
 let amount = el.getAttribute('value');
 screen.innerHTML += amount;
+number.push(amount);
 }
+console.log(number)
 
-//maybe dont need to store value from click. maybe only store value from display, using the amount value
-function store(el){
-let amount = el.getAttribute('value');
-arr.push(amount)
-}
-console.log(arr)
+
 
 
 // numberArray.push(Number(numberForArray1));
