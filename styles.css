@@ -55,6 +55,7 @@ body{
     padding: 10px;
     word-wrap: break-word;
     word-break: break-all;
+    font-size: 30px;
 }
 
 .display-output > .previous-number{
