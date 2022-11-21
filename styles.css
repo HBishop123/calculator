@@ -35,6 +35,7 @@ body{
     border: 1px solid white;
     outline: none;
     background-color: grey;
+    border: 1px solid burlywood;
 }
 
 .container > button:hover {
@@ -65,3 +66,4 @@ body{
 .display-output > .new-number{
     color: white;
 }
+
