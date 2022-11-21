@@ -51,41 +51,54 @@ buttons.map( button => {
             case 'AC':
                 screenBelow.innerText = ''
                 screenAbove.innerText = ''
-                break;
+            break;
 
             case 'DEL':
                 screenBelow.innerText = screenBelow.innerText.slice(0, -1);
-                break;
+            break;
 
             case '.':
                 if (screenBelow.innerText.includes('.')){
                 screenBelow.innerText = screenBelow.innerText}    
                 else{screenBelow.innerText = screenBelow.innerText + '.'}
-                break;
+            break;
 
             default:
                 
                 screenBelow.innerText += e.target.innerText;
-                break;
+            break;
 
             case '+':
                screenAbove.innerText = screenBelow.innerText + '+'
                screenBelow.innerText = ''
+               console.log(screenAbove.innerText)
+               if(screenAbove.innerText === '+'){
+                screenAbove.innerText = '0+'
+               }
             break;
 
             case '/':
                screenAbove.innerText = screenBelow.innerText + '/'
                screenBelow.innerText = ''
+               if(screenAbove.innerText === '/'){
+                screenAbove.innerText = '0/'
+               }
             break;
 
             case '-':
                screenAbove.innerText = screenBelow.innerText + '-'
                screenBelow.innerText = ''
+               if(screenAbove.innerText === '-'){
+                screenAbove.innerText = '0-'
+               }
             break;
 
             case 'x':
                screenAbove.innerText = screenBelow.innerText + 'x'
                screenBelow.innerText = ''
+               if(screenAbove.innerText === 'x'){
+                screenAbove.innerText = '0x'
+               }
             break;
 
             case '=':
