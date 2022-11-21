@@ -69,28 +69,36 @@ buttons.map( button => {
                 break;
 
             case '+':
-                screenAbove.innerText = screenBelow.innerText + '+'
-                screenBelow.innerText = ''
-                break;
+               screenAbove.innerText = screenBelow.innerText + '+'
+               screenBelow.innerText = ''
+               if(screenAbove.innerText = '+'){
+               screenAbove.innerText = '0+'}
+            break;
 
             case '/':
                screenAbove.innerText = screenBelow.innerText + '/'
                screenBelow.innerText = ''
+               if(screenAbove.innerText = '/'){
+               screenAbove.innerText = '0/'}
             break;
 
             case '-':
                screenAbove.innerText = screenBelow.innerText + '-'
                screenBelow.innerText = ''
+               if(screenAbove.innerText = '-'){
+               screenAbove.innerText = '0-'}
             break;
 
             case 'x':
                screenAbove.innerText = screenBelow.innerText + 'x'
                screenBelow.innerText = ''
+               if(screenAbove.innerText = '+'){
+               screenAbove.innerText = '0x'}v
             break;
 
             case '=':
                 let firstNumber = Number(screenAbove.innerText.slice(0, -1))
-                let secondNumber = Number(screenBelow.innerHTML)
+                let secondNumber = Number(screenBelow.innerText)
 
                 if(screenAbove.innerText.includes('+')){
                 screenAbove.innerText = `${firstNumber} + ${secondNumber}`
