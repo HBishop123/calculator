@@ -39,16 +39,19 @@ return result
 }
 
 //display of calculator
-let screen = document.getElementById("screen-display");
-numberButtons = document.getElementsByClassName('.number-key');
-
-for(let i=0; i<numberButtons.length; i++){
-    numberButtons[i].addEventListener('click', screen)
-}
-numberButtons.addEventListener('click', function(){
+let screenBelow = document.querySelector('.display-output').querySelector('.new-number');
+let buttons = Array.from(document.querySelectorAll('button'));
 
 
-})
+buttons.map( button => {
+    button.addEventListener('click', (e) => {
+        switch(e.target.innerText){
+            default:
+                screenBelow.innerText += e.target.innerText
+        }
+        
+    });
+});
 
 
 
