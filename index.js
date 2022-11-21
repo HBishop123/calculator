@@ -54,9 +54,6 @@ buttons.map( button => {
             break;
 
             case 'DEL':
-                if(screenAbove.innerText != ''){
-                screenBelow.innerText = screenBelow.innerText    
-                }else
                 screenBelow.innerText = screenBelow.innerText.slice(0, -1);
             break;
 
