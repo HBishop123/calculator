@@ -78,6 +78,11 @@ buttons.map( button => {
                screenBelow.innerText = ''
             break;
 
+            case 'x':
+               screenAbove.innerText = screenBelow.innerText + 'x'
+               screenBelow.innerText = ''
+            break;
+
             case '=':
                 let firstNumber = Number(screenAbove.innerText.slice(0, -1))
                 let secondNumber = Number(screenBelow.innerHTML)
@@ -89,7 +94,15 @@ buttons.map( button => {
                }else if(screenAbove.innerText.includes('-')){
                screenAbove.innerText = `${firstNumber} - ${secondNumber}`
                screenBelow.innerText = firstNumber - secondNumber
-               }
+
+               }else if(screenAbove.innerText.includes('/')){
+               screenAbove.innerText = `${firstNumber} / ${secondNumber}`
+               screenBelow.innerText = firstNumber / secondNumber
+
+               }else if(screenAbove.innerText.includes('x')){
+                screenAbove.innerText = `${firstNumber} x ${secondNumber}`
+                screenBelow.innerText = firstNumber * secondNumber
+                }
 
 
 
