@@ -38,36 +38,19 @@ switch (operator) {
 return result
 }
 
-
-//try to get one number added to with each click instead of pushing to array.
-
-//empty array of numbers    
-let number = []
-let numberInt = ''
-
 //display of calculator
 let screen = document.getElementById("screen-display");
+numberButtons = document.getElementsByClassName('.number-key');
 
-//function to grab value of numbers and show them on calc screen
-
-function display(el){
-let amount = el.getAttribute('value');
-screen.innerHTML += amount;
-number.push(amount);
+for(let i=0; i<numberButtons.length; i++){
+    numberButtons[i].addEventListener('click', screen)
 }
+numberButtons.addEventListener('click', function(){
 
-let plus = document.getElementById('+');
-plus.addEventListener('click', function(){
 
 })
 
-console.log(numberInt)
-console.log(number)
 
 
 
 
-
-
-
-// numberArray.push(Number(numberForArray1));

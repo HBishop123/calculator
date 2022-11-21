@@ -2,15 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-}
-
-body{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-weight: normal;
 }
 
 html{
@@ -18,111 +10,57 @@ html{
     width: 100%;
 }
 
-.calculator-outline{
-    display: flex;
-    flex-direction: column;
-    border: solid black;
-    height: 70%;
-    width: 27%;
+body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
 
 
-}
-#screen{
-    display: flex;
-    border: solid black;
-    width: 90%;
-    height: 20%;
-    margin-top: 10%;
-    align-self: center;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 40px;
+
+.container{
+   display: grid;
+   justify-content: center;
+   align-content: center;
+   min-height: 100vh;
+   grid-template-columns: repeat(4, 100px);
+   grid-template-rows: minmax(120px, auto) repeat(5, 100px);
    
 }
 
-.buttons{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: row;
-    align-items: space-around;
+.container > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: grey;
 }
 
-.first5{
+.container > button:hover {
+    background-color: lightblue
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.display-output {
+    grid-column: 1 / -1;
+    background-color: black;
     display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    gap: 4%;
-    align-items: center;
-    
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
-.first5 > * {
-    border: solid black;
-    height: 15%;
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.display-output > .previous-number{
+    color: white;
 }
 
-.second5{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    gap: 4%;
-    align-items: center;
-    
-}
-
-.second5 > * {
-    border: solid black;
-    height: 15%;
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.third5{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    gap: 4%;
-    align-items: center;
-    
-}
-
-.third5 > * {
-    border: solid black;
-    height: 15%;
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.fourth5{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    gap: 4%;
-    align-items: center;
-}
-
-.fourth5 > * {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: solid black;
-    height: 15%;
-    width: 60%;
+.display-output > .new-number{
+    color: white;
 }
