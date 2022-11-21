@@ -44,7 +44,6 @@ let screenAbove = document.querySelector('.display-output').querySelector('.prev
 let buttons = Array.from(document.querySelectorAll('button'));
 
 
-
 buttons.map( button => {
     button.addEventListener('click', (e) => {
         switch(e.target.innerText){
@@ -57,7 +56,13 @@ buttons.map( button => {
             case 'DEL':
                 screenBelow.innerText = screenBelow.innerText.slice(0, -1);
                 break;
-            
+
+            case '.':
+                if (screenBelow.innerText.includes('.')){
+                screenBelow.innerText = screenBelow.innerText}    
+                else{screenBelow.innerText = screenBelow.innerText + '.'}
+                break;
+
             default:
                 
                 screenBelow.innerText += e.target.innerText;
