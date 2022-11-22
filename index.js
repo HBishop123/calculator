@@ -5,33 +5,45 @@ let screenAbove = document.querySelector('.display-output').querySelector('.prev
 let buttons = Array.from(document.querySelectorAll('button'));
 //Equals
 let equals =  document.getElementById('equals');
+let hasNumber = /\d/;
+
+
 
 //switch case for different buttons and their use
 buttons.map( button => {
     button.addEventListener('click', (e) => {
+        let firstNumber = Number(screenAbove.innerText.slice(0, -1))
+        let secondNumber = Number(screenBelow.innerText)
         console.log(screenBelow)
         switch(e.target.innerText){
 
+         //delete all text and return equals to enabled
             case 'AC':
                 screenBelow.innerText = ''
                 screenAbove.innerText = ''
+                equals.disabled = false;
+
             break;
+            //delete one number
 
             case 'DEL':
                 screenBelow.innerText = screenBelow.innerText.slice(0, -1);
             break;
-
+            //adds decimal point to end, if one is already added, then it doesn't add another one.
             case '.':
                 if (screenBelow.innerText.includes('.')){
                 screenBelow.innerText = screenBelow.innerText}    
                 else{screenBelow.innerText = screenBelow.innerText + '.'}
             break;
 
+            //default adding number
             default:
                 screenBelow.innerText += e.target.innerText;
             break;
 
+            //if someone presses +/- key, the bottom number interchanges from positive to negative
             case '+/-':
+                
                 if (screenBelow.innerText === ''){
                     screenBelow.innerText === ''
                 }else if(screenBelow.innerText > 0){
@@ -43,9 +55,37 @@ buttons.map( button => {
             break;    
 
             case '+':
+
                equals.disabled = false;
+               // depending on if a calculation has been made previously but without the equals sign, is allows to press other signs and continue calculation
+               if((screenAbove.innerText.includes('+') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+               screenAbove.innerText = firstNumber + secondNumber + '+'
+               screenBelow.innerText = ''}
+
+               else if((screenAbove.innerText.includes('x') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+               screenAbove.innerText = firstNumber * secondNumber + '+'
+               screenBelow.innerText = ''}
+
+               else if((screenAbove.innerText.includes('/') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+               screenAbove.innerText = firstNumber / secondNumber + '+'
+               screenBelow.innerText = ''}
+
+               else if((screenAbove.innerText.includes('-') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+               screenAbove.innerText = firstNumber - secondNumber + '+'
+               screenBelow.innerText = ''}
+     
+ 
+               //standard add function if a calculaton hasn't already been made.
+               else if(!screenAbove.innerText.includes('+')){
                screenAbove.innerText = screenBelow.innerText + '+'
                screenBelow.innerText = ''
+
+               //can use the +-/x buttons after having used equals, to continue calculation
+               }else if(screenAbove.innerText.includes('=')){
+                screenAbove.innerText = screenBelow.innerText + '+'
+                screenBelow.innerText = '';
+               }
+               //pressing + by itself buts a 0 in front
                if(screenAbove.innerText === '+'){
                 screenAbove.innerText = '0+'
                }
@@ -79,29 +119,28 @@ buttons.map( button => {
             break;
 //do calculation
             case '=':
-                let firstNumber = Number(screenAbove.innerText.slice(0, -1))
-                let secondNumber = Number(screenBelow.innerText)
+                
                 equals.disabled = true;
                 
 
 
                 if(screenAbove.innerText.includes('+')){
-                screenAbove.innerText = `${firstNumber} + ${secondNumber}`
+                screenAbove.innerText = `${firstNumber} + ${secondNumber} =`
                 screenBelow.innerText = firstNumber + secondNumber
 
                }else if(screenAbove.innerText.includes('-')){
-               screenAbove.innerText = `${firstNumber} - ${secondNumber}`
+               screenAbove.innerText = `${firstNumber} - ${secondNumber} =`
                screenBelow.innerText = firstNumber - secondNumber
 
                }else if(screenAbove.innerText.includes('/')){
-               screenAbove.innerText = `${firstNumber} / ${secondNumber}`
+               screenAbove.innerText = `${firstNumber} / ${secondNumber} =`
                screenBelow.innerText = firstNumber / secondNumber
                if((firstNumber == 0) && (secondNumber == 0)){
                 return screenBelow.innerText = 'lol, nice try'
                }
                
                }else if(screenAbove.innerText.includes('x')){
-                screenAbove.innerText = `${firstNumber} x ${secondNumber}`
+                screenAbove.innerText = `${firstNumber} x ${secondNumber} =`
                 screenBelow.innerText = firstNumber * secondNumber
                 }
              }
