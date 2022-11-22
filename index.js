@@ -75,12 +75,12 @@ buttons.map( button => {
                screenBelow.innerText = ''}
      
  
-               //standard add function if a calculaton hasn't already been made - applies to rest of sign casev
+               //standard add function if a calculaton hasn't already been made - applies to rest of sign case
                else if(!screenAbove.innerText.includes('+')){
                screenAbove.innerText = screenBelow.innerText + '+'
                screenBelow.innerText = ''
 
-               //can use the +-/x buttons after having used equals, to continue calculation - applies to rest of sign case
+               //can use the +-/ or x buttons after having used equals, to continue calculation - applies to rest of sign case
                }else if(screenAbove.innerText.includes('=')){
                 screenAbove.innerText = screenBelow.innerText + '+'
                 screenBelow.innerText = '';
@@ -94,9 +94,29 @@ buttons.map( button => {
             case '/':
                equals.disabled = false;
 
-               screenAbove.innerText = screenBelow.innerText + '/'
-               screenBelow.innerText = ''
+               if((screenAbove.innerText.includes('+') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+                screenAbove.innerText = firstNumber + secondNumber + '/'
+                screenBelow.innerText = ''}
+ 
+                else if((screenAbove.innerText.includes('x') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+                screenAbove.innerText = firstNumber * secondNumber + '/'
+                screenBelow.innerText = ''}
+ 
+                else if((screenAbove.innerText.includes('/') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+                screenAbove.innerText = firstNumber / secondNumber + '/'
+                screenBelow.innerText = ''}
+ 
+                else if((screenAbove.innerText.includes('-') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+                screenAbove.innerText = firstNumber - secondNumber + '/'
+                screenBelow.innerText = ''}
 
+                else if(!screenAbove.innerText.includes('/')){
+                screenAbove.innerText = screenBelow.innerText + '/'
+                screenBelow.innerText = ''}   
+                           
+                else if(screenAbove.innerText.includes('=')){
+                screenAbove.innerText = screenBelow.innerText + '/'
+                screenBelow.innerText = '';}
 
                if(screenAbove.innerText === '/'){
                 screenAbove.innerText = '0/'
@@ -105,17 +125,63 @@ buttons.map( button => {
 
             case '-':
                equals.disabled = false;
+
+               if((screenAbove.innerText.includes('+') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+                screenAbove.innerText = firstNumber + secondNumber + '-'
+                screenBelow.innerText = ''}
+ 
+               else if((screenAbove.innerText.includes('x') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+               screenAbove.innerText = firstNumber * secondNumber + '-'
+               screenBelow.innerText = ''}
+ 
+               else if((screenAbove.innerText.includes('/') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+               screenAbove.innerText = firstNumber / secondNumber + '-'
+               screenBelow.innerText = ''}
+ 
+               else if((screenAbove.innerText.includes('-') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+               screenAbove.innerText = firstNumber - secondNumber + '-'
+               screenBelow.innerText = ''}
+
+               else if(!screenAbove.innerText.includes('-')){
                screenAbove.innerText = screenBelow.innerText + '-'
-               screenBelow.innerText = ''
+               screenBelow.innerText = ''}   
+                           
+               else if(screenAbove.innerText.includes('=')){
+               screenAbove.innerText = screenBelow.innerText + '-'
+               screenBelow.innerText = '';}
+
                if(screenAbove.innerText === '-'){
-                screenAbove.innerText = '0-'
+               screenAbove.innerText = '0-'
                }
             break;
 
             case 'x':
                equals.disabled = false;
+
+               if((screenAbove.innerText.includes('+') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+               screenAbove.innerText = firstNumber + secondNumber + 'x'
+               screenBelow.innerText = ''}
+ 
+               else if((screenAbove.innerText.includes('x') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+               screenAbove.innerText = firstNumber * secondNumber + 'x'
+               screenBelow.innerText = ''}
+ 
+               else if((screenAbove.innerText.includes('/') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+               screenAbove.innerText = firstNumber / secondNumber + 'x'
+               screenBelow.innerText = ''}
+ 
+               else if((screenAbove.innerText.includes('-') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
+               screenAbove.innerText = firstNumber - secondNumber + 'x'
+               screenBelow.innerText = ''}
+
+               else if(!screenAbove.innerText.includes('x')){
                screenAbove.innerText = screenBelow.innerText + 'x'
-               screenBelow.innerText = ''
+               screenBelow.innerText = ''}   
+                           
+               else if(screenAbove.innerText.includes('=')){
+               screenAbove.innerText = screenBelow.innerText + 'x'
+               screenBelow.innerText = '';}
+               
                if(screenAbove.innerText === 'x'){
                 screenAbove.innerText = '0x'
                }
