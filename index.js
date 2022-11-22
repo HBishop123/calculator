@@ -23,7 +23,7 @@ buttons.map( button => {
         console.log(screenBelow)
         switch(e.target.innerText){
 
-         //delete all text and return equals to enabled
+         //delete all text and return equals to enabled + other button enabling
             case 'AC':
                 screenBelow.innerText = ''
                 screenAbove.innerText = ''
