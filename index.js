@@ -57,7 +57,7 @@ buttons.map( button => {
             case '+':
 
                equals.disabled = false;
-               // depending on if a calculation has been made previously but without the equals sign, is allows to press other signs and continue calculation
+               // depending on if a calculation has been made previously but without the equals sign, is allows to press other signs and continue calculation - applies to rest of sign case
                if((screenAbove.innerText.includes('+') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
                screenAbove.innerText = firstNumber + secondNumber + '+'
                screenBelow.innerText = ''}
@@ -75,17 +75,17 @@ buttons.map( button => {
                screenBelow.innerText = ''}
      
  
-               //standard add function if a calculaton hasn't already been made.
+               //standard add function if a calculaton hasn't already been made - applies to rest of sign casev
                else if(!screenAbove.innerText.includes('+')){
                screenAbove.innerText = screenBelow.innerText + '+'
                screenBelow.innerText = ''
 
-               //can use the +-/x buttons after having used equals, to continue calculation
+               //can use the +-/x buttons after having used equals, to continue calculation - applies to rest of sign case
                }else if(screenAbove.innerText.includes('=')){
                 screenAbove.innerText = screenBelow.innerText + '+'
                 screenBelow.innerText = '';
                }
-               //pressing + by itself buts a 0 in front
+               //pressing sign by itself buts a 0 in front - applies to rest of sign case
                if(screenAbove.innerText === '+'){
                 screenAbove.innerText = '0+'
                }
@@ -93,8 +93,11 @@ buttons.map( button => {
 
             case '/':
                equals.disabled = false;
+
                screenAbove.innerText = screenBelow.innerText + '/'
                screenBelow.innerText = ''
+
+
                if(screenAbove.innerText === '/'){
                 screenAbove.innerText = '0/'
                }
