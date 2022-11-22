@@ -234,7 +234,7 @@ buttons.map( button => {
                 screenAbove.innerText = `${firstNumber} + ${secondNumber} =`
                 screenBelow.innerText = firstNumber + secondNumber
 
-               }else if(screenAbove.innerText.includes('-')){
+               }else if((screenAbove.innerText.includes('-') && (!screenAbove.innerText.includes('x')) && (!screenAbove.innerText.includes('/')))){
                screenAbove.innerText = `${firstNumber} - ${secondNumber} =`
                screenBelow.innerText = firstNumber - secondNumber
 
@@ -249,6 +249,11 @@ buttons.map( button => {
                 screenAbove.innerText = `${firstNumber} x ${secondNumber} =`
                 screenBelow.innerText = firstNumber * secondNumber
                 }
+               
+               
+                
+            
+            
              }
         
     });
