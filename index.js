@@ -27,7 +27,10 @@ buttons.map( button => {
             //delete one number
 
             case 'DEL':
-                screenBelow.innerText = screenBelow.innerText.slice(0, -1);
+                if(screenAbove.innerText.includes('=')){
+                screenBelow.innerText = screenBelow.innerText
+                }else{
+                screenBelow.innerText = screenBelow.innerText.slice(0, -1);}
             break;
             //adds decimal point to end, if one is already added, then it doesn't add another one.
             case '.':
