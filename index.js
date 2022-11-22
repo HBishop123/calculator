@@ -43,6 +43,7 @@ buttons.map( button => {
             break;    
 
             case '+':
+               equals.disabled = false;
                screenAbove.innerText = screenBelow.innerText + '+'
                screenBelow.innerText = ''
                if(screenAbove.innerText === '+'){
@@ -51,14 +52,16 @@ buttons.map( button => {
             break;
 
             case '/':
+               equals.disabled = false;
                screenAbove.innerText = screenBelow.innerText + '/'
                screenBelow.innerText = ''
                if(screenAbove.innerText === '/'){
-                screenAbove.innerText =  document.getElementById('equals')'0/'
+                screenAbove.innerText = '0/'
                }
             break;
 
             case '-':
+               equals.disabled = false;
                screenAbove.innerText = screenBelow.innerText + '-'
                screenBelow.innerText = ''
                if(screenAbove.innerText === '-'){
@@ -67,6 +70,7 @@ buttons.map( button => {
             break;
 
             case 'x':
+               equals.disabled = false;
                screenAbove.innerText = screenBelow.innerText + 'x'
                screenBelow.innerText = ''
                if(screenAbove.innerText === 'x'){
@@ -147,3 +151,6 @@ buttons.map( button => {
 // }
 // return result
 // }
+
+
+
