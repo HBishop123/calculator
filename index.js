@@ -7,8 +7,12 @@ let buttons = Array.from(document.querySelectorAll('button'));
 let equals =  document.getElementById('equals');
 //checking if there is a number
 let hasNumber = /\d/;
+//selecting all numbers on calc
 let numberButtons = document.querySelector('.container').querySelectorAll('.number')
-
+let plus = document.getElementById('plus');
+let minus = document.getElementById('minus');
+let divide = document.getElementById('divide')
+let multiply = document.getElementById('times')
 
 
 //switch case for different buttons and their use
@@ -25,6 +29,10 @@ buttons.map( button => {
                 screenAbove.innerText = ''
                 equals.disabled = false;
                 numberButtons.forEach(numberButtons => numberButtons.disabled = false);
+                minus.disabled = false;
+                multiply.disabled = false;
+                divide.disabled = false;
+                plus.disabled = false;
 
 
             break;
@@ -46,6 +54,10 @@ buttons.map( button => {
             //default adding number
             default:
                 screenBelow.innerText += e.target.innerText;
+                minus.disabled = false;
+                multiply.disabled = false;
+                divide.disabled = false;
+                plus.disabled = false;
             break;
 
             //if someone presses +/- key, the bottom number interchanges from positive to negative
@@ -65,6 +77,10 @@ buttons.map( button => {
 
                equals.disabled = false;
                numberButtons.forEach(numberButtons => numberButtons.disabled = false);
+               minus.disabled = true;
+               multiply.disabled = true;
+               divide.disabled = true;
+               
                // depending on if a calculation has been made previously but without the equals sign, is allows to press other signs and continue calculation - applies to rest of sign case
                if((screenAbove.innerText.includes('+') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
                screenAbove.innerText = firstNumber + secondNumber + '+'
@@ -102,6 +118,9 @@ buttons.map( button => {
             case '/':
                equals.disabled = false;
                numberButtons.forEach(numberButtons => numberButtons.disabled = false);
+               minus.disabled = true;
+               multiply.disabled = true;
+               plus.disabled = true;
 
                if((screenAbove.innerText.includes('+') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
                 screenAbove.innerText = firstNumber + secondNumber + '/'
@@ -135,6 +154,9 @@ buttons.map( button => {
             case '-':
                equals.disabled = false;
                numberButtons.forEach(numberButtons => numberButtons.disabled = false);
+               plus.disabled = true;
+               multiply.disabled = true;
+               divide.disabled = true;
 
                if((screenAbove.innerText.includes('+') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
                 screenAbove.innerText = firstNumber + secondNumber + '-'
@@ -168,6 +190,9 @@ buttons.map( button => {
             case 'x':
                equals.disabled = false;
                numberButtons.forEach(numberButtons => numberButtons.disabled = false);
+               minus.disabled = true;
+               plus.disabled = true;
+               divide.disabled = true;
 
                if((screenAbove.innerText.includes('+') && !screenAbove.innerText.includes('=')) && (hasNumber.test(screenBelow.innerText))){
                screenAbove.innerText = firstNumber + secondNumber + 'x'
