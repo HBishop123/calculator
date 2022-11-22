@@ -46,6 +46,7 @@ let buttons = Array.from(document.querySelectorAll('button'));
 
 buttons.map( button => {
     button.addEventListener('click', (e) => {
+        console.log(screenBelow)
         switch(e.target.innerText){
 
             case 'AC':
@@ -68,12 +69,19 @@ buttons.map( button => {
             break;
 
             case '+/-':
+                if (screenBelow.innerText === ''){
+                    screenBelow.innerText === ''
+                }else if(screenBelow.innerText > 0){
+                    screenBelow.innerText = '-' + screenBelow.innerText
+                }else if(screenBelow.innerText.includes('-')){
+                    screenBelow.innerText = screenBelow.innerText.slice(1) 
+                }
+
             break;    
 
             case '+':
                screenAbove.innerText = screenBelow.innerText + '+'
                screenBelow.innerText = ''
-               console.log(screenAbove.innerText)
                if(screenAbove.innerText === '+'){
                 screenAbove.innerText = '0+'
                }
